@@ -1,0 +1,509 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* sobreposição semi-transparente preta */
+  z-index: 1; /* Garante que a sobreposição fique entre o vídeo e o conteúdo do cabeçalho */
+}
+
+html {
+  scroll-behavior: smooth; /* Adiciona rolagem suave para todo o documento */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.7;
+  color: var(--color-white);
+  background: #000;
+}
+
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+a {
+  color: var(--color-white);
+}
+
+/*--- navbar ------ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black; /* Inicial */
+}
+
+.nav-scrolled {
+  background: black !important; /* Cor mais escura ao rolar */
+}
+
+nav button {
+  display: none;
+}
+
+.nav__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre o logo e o texto */
+  margin-left: -40px;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center; /* Garante que o texto esteja centralizado verticalmente */
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 2rem; /* Ajuste conforme necessário */
+}
+
+.nav__menu a {
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 400ms ease;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav__menu a:hover {
+  color: #034694;
+}
+
+.header-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Ajustando para ocupar toda a altura da tela */
+  z-index: 1000;
+}
+
+.header__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 5rem;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.TextoUm {
+  font-family: "";
+  font-size: 3rem; /* Ajuste o tamanho do texto conforme necessário */
+  text-align: center; /* Garante que o texto seja centralizado dentro do flex container */
+  margin: 0; /* Removemos a margem para evitar qualquer deslocamento */
+}
+
+.header__left {
+  display: flex; /* Alteramos para flexbox */
+  justify-content: center; /* Isso centraliza horizontalmente */
+  align-items: center; /* Isso centraliza verticalmente */
+  height: 100%; /* Adicionamos uma altura para que o alinhamento funcione corretamente */
+}
+
+#headerVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Garantindo que o vídeo cubra totalmente o header-container */
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* HEADER */
+
+.typing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 4.3rem;
+  color: white;
+  text-align: center;
+}
+
+.static-text {
+  color: white;
+  margin-right: 10px;
+}
+
+.dynamic-text {
+  color: #034694;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Rodapé */
+.site-footer {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #101010;
+  color: #fff;
+  font-size: 14px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-switcher a {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.language-switcher a:hover {
+  color: #034694;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-lg-3, .col-md-6 {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.service-card {
+  width: 100%;
+  max-width: 350px; /* Aumenta o tamanho máximo dos cards */
+  height: 350px; /* Torna os cards mais quadrados */
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  font-size: 2.5rem; /* Ajusta o tamanho dos ícones */
+  color: #034694;
+  margin-bottom: 15px;
+  margin-right: 10px; /* Espaço entre os ícones no card de Metaverso */
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #d1d1d1;
+}
+
+/* Estilos para a seção Quem Somos */
+.who-we-are {
+  padding: 60px 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.who-we-are .titulo {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 2.5rem; /* Tamanho do título */
+  text-align: center; /* Centraliza o título */
+}
+
+.who-we-are .logo-img {
+  width: 300px; /* Ajuste o tamanho da imagem conforme necessário */
+  margin-bottom: 20px;
+}
+
+.who-we-are .quem-somos-text {
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: left; /* Texto alinhado à esquerda */
+}
+
+.who-we-are p, .who-we-are ul {
+  margin-bottom: 20px;
+}
+
+.who-we-are ul {
+  list-style: none;
+  padding: 0;
+}
+
+.who-we-are ul li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.who-we-are ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #034694;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #034694;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+.follow-us {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Estilos para a seção O que fazemos */
+.what-we-do {
+  padding: 60px 0;
+  background-color: #000;
+}
+
+.what-we-do .titulo {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 2.5rem; /* Tamanho do título */
+  text-align: center; /* Centraliza o título */
+}
+
+/* Estilos para o formulário de contato */
+.contact-section {
+  background-color: #000;
+  color: #d1d1d1;
+  padding: 60px 0;
+}
+
+.contact-section .titulo {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 2.5rem; /* Tamanho do título */
+  text-align: center; /* Centraliza o título */
+}
+
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-left: 5px solid #034694;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.heading {
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.form-container .form .input {
+  color: #87a4b6;
+  width: 100%;
+  background-color: #002733;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid transparent;
+}
+
+.form-container .form .input:focus {
+  border-left: 5px solid #034694;
+}
+
+.form-container .form .textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #013747;
+  color: #ff7a01;
+  font-weight: bold;
+  resize: none;
+  max-height: 150px;
+  margin-bottom: 20px;
+  border-left: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .textarea:focus {
+  border-left: 5px solid #034694;
+}
+
+.form-container .form .button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-container .form .button-container .send-button {
+  background: #034694;
+  padding: 10px;
+  color: #001925;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .button-container .send-button:hover {
+  background: transparent;
+  border: 1px solid #034694;
+  color: #034694;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #101010;
+  color: #fff;
+  font-size: 14px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Estilos para animações */
+[data-aos] {
+  transition-property: opacity, transform;
+  transition-duration: 0.6s;
+  transition-timing-function: ease;
+  opacity: 0;
+}
+
+[data-aos][data-aos][data-aos].aos-animate {
+  opacity: 1;
+}
+
+[data-aos=fade-up] {
+  transform: translateY(50px);
+}
+
+[data-aos=fade-up].aos-animate {
+  transform: translateY(0);
+}
+
+[data-aos=fade-right] {
+  transform: translateX(-50px);
+}
+
+[data-aos=fade-right].aos-animate {
+  transform: translateX(0);
+}
+
+[data-aos=fade-left] {
+  transform: translateX(50px);
+}
+
+[data-aos=fade-left].aos-animate {
+  transform: translateX(0);
+}

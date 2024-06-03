@@ -1,0 +1,460 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-primary: #6c63ff;
+  --color-success: #00bf8e;
+  --color-warning: #f7c94b;
+  --color-danger: #f75842;
+  --color-danger-variant: rgba(247, 88, 66, 0.4);
+  --color-white: #fff;
+  --color-light: rgba(255, 255, 255, 0.7);
+  --color-black: #000;
+  --color-bg: #1f2641;
+  --color-bg1: #2e3267;
+  --color-bg2: #424890;
+
+  --container-width-lg: 80%;
+  --container-width-md: 90%;
+  --container-width-sm: 94%;
+
+  --transition: all 400ms ease;
+}
+
+@font-face {
+  font-family: 'Jaapokki';
+  src: url('fonts/Jaapokki-Regular.otf') format('opentype');
+}
+
+body {
+  font-family: 'Jaapokki', sans-serif;
+  line-height: 1.7;
+  color: var(--color-white);
+  background:	#101010;
+}
+
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.6rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+
+a {
+  color: var(--color-white);
+}
+
+/*--- navbar ------ */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background: transparent;
+  transition: background-color 0.3s;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav button {
+  display: none;
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nav__menu a {
+  font-size: 0.9rem;
+  transition: all 400ms ease;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav__menu a:hover {
+  color: #90EE90;
+}
+
+header {
+  position: relative;
+  height: 70%;
+  z-index: 2;
+}
+
+.header-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.header__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 5rem;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.header__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+nav, header {
+  position: relative;
+  z-index: 2;
+}
+
+.header-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(128, 128, 128, 0.01) 0%, #101010 70%);
+  z-index: 1;
+}
+
+#headerVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* HEADER */
+.sobreposicao-texto {
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFFFFF;
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  text-align: center;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.textoSobre {
+  display: block;
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+/* Formulário de Contato */
+.form-container {
+  margin-top: 10px;
+  max-width: 1100px;
+  margin: 30px auto;
+  background-color: #001925;
+  padding: 30px;
+  border-left: 5px solid #00a7b5;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.heading {
+  display: block;
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.form-container .form .input {
+  color: #87a4b6;
+  width: 100%;
+  background-color: #002733;
+  border: none;
+  outline: none;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid transparent;
+}
+
+.form-container .form .input:focus {
+  border-left: 5px solid #00a7b5;
+}
+
+.form-container .form .textarea {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  background-color: #013747;
+  color: #00a7b5;
+  font-size: 1.2rem;
+  font-weight: bold;
+  resize: none;
+  max-height: 150px;
+  margin-bottom: 20px;
+  border-left: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .textarea:focus {
+  border-left: 5px solid #00a7b5;
+}
+
+.form-container .form .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-container .form .button-container .send-button {
+  flex-basis: 100%;
+  background: #00a7b5;
+  padding: 15px;
+  color: #001925;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.form-container .form .button-container .send-button:hover {
+  background: transparent;
+  border: 1px solid #00a7b5;
+  color: #00a7b5;
+}
+
+/* Seção de Contato */
+/* Seção de Contato */
+.contact-section {
+  margin-top: 150px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed; /* Efeito parallax */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #101010; /* Adiciona a cor de fundo */
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.43); /* Adiciona uma sobreposição com opacidade de 43% */
+  z-index: 0;
+}
+
+#background-image {
+  display: none; /* Esconde a imagem de fundo anterior */
+}
+
+.contact-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 1;
+}
+
+.contact-card.info {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 30%; /* Ajuste a largura do card de informações */
+}
+
+.contact-card.details,
+.contact-card.map {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 65%; /* Ajuste a largura do wrapper de detalhes e mapa */
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: white;
+  margin-right: 10px;
+}
+
+/* Estilo dos ícones sociais */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Estilo dos contêineres sociais */
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 5px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+}
+
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+}
+
+.containerFour:hover {
+  background-color: green;
+  transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Rodapé */
+.site-footer {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: black;
+  color: #fff;
+  font-size: 14px;
+}
+
+.site-footer p {
+  margin: 0;
+}
