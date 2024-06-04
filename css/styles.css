@@ -507,3 +507,61 @@ nav button {
 [data-aos=fade-left].aos-animate {
   transform: translateX(0);
 }
+
+
+
+
+/* Estilos para o menu responsivo */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: black;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+  }
+
+  .nav__menu a {
+    margin: 1rem 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav__container {
+    justify-content: space-between;
+  }
+
+  .language-switcher {
+    display: none;
+  }
+
+  #close-menu-btn {
+    display: none;
+  }
+
+  .nav__menu.active {
+    display: flex;
+  }
+
+  #open-menu-btn.active {
+    display: none;
+  }
+
+  #close-menu-btn.active {
+    display: block;
+  }
+}
