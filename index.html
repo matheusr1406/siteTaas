@@ -197,26 +197,35 @@
         <div class="form-container">
           <div class="form">
             <span class="heading">Entre em Contato</span>
-            <input placeholder="Nome" type="text" class="input" required />
-            <input
-              placeholder="Email"
-              id="mail"
-              type="email"
-              class="input"
-              required
-            />
-            <textarea
-              placeholder="Mensagem"
-              rows="10"
-              cols="30"
-              id="message"
-              name="message"
-              class="textarea"
-              required
-            ></textarea>
-            <div class="button-container">
-              <div class="send-button">Enviar</div>
-            </div>
+            <form id="contactForm" action="send_mail.php" method="POST">
+              <input
+                placeholder="Nome"
+                type="text"
+                class="input"
+                name="name"
+                required
+              />
+              <input
+                placeholder="Email"
+                id="mail"
+                type="email"
+                class="input"
+                name="email"
+                required
+              />
+              <textarea
+                placeholder="Mensagem"
+                rows="10"
+                cols="30"
+                id="message"
+                name="message"
+                class="textarea"
+                required
+              ></textarea>
+              <div class="button-container">
+                <button type="submit" class="send-button">Enviar</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
