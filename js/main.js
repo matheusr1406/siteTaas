@@ -1,106 +1,62 @@
-document.addEventListener("scroll", function () {
-  var titulo = document.querySelector(".titulo");
-  var tituloPos = titulo.getBoundingClientRect().top + window.scrollY; // Posição absoluta do título na página
-  var windowPos = window.scrollY + window.innerHeight; // Posição da janela atual
+// Texto dinâmico
+document.addEventListener('DOMContentLoaded', (event) => {
+    const dynamicText = document.querySelector('.dynamic-text');
+    const words = ['Negócios imobiliários', 'Investimentos', 'Grandes desafios'];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-  if (windowPos > tituloPos) {
-    titulo.style.opacity = "1"; // Torna o título visível
-    titulo.style.transform = "translateY(0)"; // Move para a posição final
-  } else {
-    titulo.style.opacity = "0"; // Mantém invisível
-    titulo.style.transform = "translateY(20px)"; // Manter deslocado enquanto não estiver visível
-  }
-});
-
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector("nav");
-  if (window.scrollY > 50) {
-    // Ajuste o valor de acordo com sua preferência
-    navbar.style.backgroundColor = "rgba(255, 255, 255, 0.9)"; // Fundo mais opaco ao rolar
-  } else {
-    navbar.style.backgroundColor = "transparent"; // Transparente no topo
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const navbar = document.querySelector("nav");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) {
-      navbar.classList.add("nav-scrolled");
-    } else {
-      navbar.classList.remove("nav-scrolled");
+    function type() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+            dynamicText.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+            if (charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, 100);
+            }
+        } else {
+            dynamicText.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+            if (charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(type, 2000);
+            } else {
+                setTimeout(type, 200);
+            }
+        }
     }
-  });
-});
 
-$(document).ready(function(){
-  $('#portfolioCarousel').carousel({
-    interval: 2000
-  });
+    // Inicia a função de digitação
+    type();
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const dynamicText = document.querySelector('.dynamic-text');
-  const wordsPT = ['Reinventar!', 'Transformar!', 'Resolver!'];
-  const wordsEN = ['Reinvent!', 'Transform!', 'Solve!'];
-  let words = wordsPT; // Default to Portuguese
+ document.getElementById('open-menu-btn').addEventListener('click', function() {
+     document.querySelector('.nav__menu').classList.add('active');
+     document.getElementById('open-menu-btn').classList.add('active');
+     document.getElementById('close-menu-btn').classList.add('active');
+   });
+   
+   document.getElementById('close-menu-btn').addEventListener('click', function() {
+     document.querySelector('.nav__menu').classList.remove('active');
+     document.getElementById('open-menu-btn').classList.remove('active');
+     document.getElementById('close-menu-btn').classList.remove('active');
+   });
+   
+// JavaScript para alternar entre as abas e mostrar o conteúdo correto
+document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove a classe 'active' de todas as abas e oculta o conteúdo de todos os estados
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.state-content').forEach(content => content.style.display = 'none');
 
-  // Detect the current page to set the words array
-  if (window.location.pathname.includes('CC.html')) {
-      words = wordsEN;
-  } else {
-      words = wordsPT;
-  }
-
-  let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  function type() {
-      const currentWord = words[wordIndex];
-      if (isDeleting) {
-          dynamicText.textContent = currentWord.substring(0, charIndex - 1);
-          charIndex--;
-          if (charIndex === 0) {
-              isDeleting = false;
-              wordIndex = (wordIndex + 1) % words.length;
-              setTimeout(type, 500);
-          } else {
-              setTimeout(type, 100);
-          }
-      } else {
-          dynamicText.textContent = currentWord.substring(0, charIndex + 1);
-          charIndex++;
-          if (charIndex === currentWord.length) {
-              isDeleting = true;
-              setTimeout(type, 2000);
-          } else {
-              setTimeout(type, 200);
-          }
-      }
-  }
-
-  type();
-});
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  const openMenuBtn = document.getElementById('open-menu-btn');
-  const closeMenuBtn = document.getElementById('close-menu-btn');
-  const navMenu = document.querySelector('.nav__menu');
-
-  openMenuBtn.addEventListener('click', () => {
-      navMenu.classList.add('active');
-      openMenuBtn.classList.add('active');
-      closeMenuBtn.classList.add('active');
-  });
-
-  closeMenuBtn.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      openMenuBtn.classList.remove('active');
-      closeMenuBtn.classList.remove('active');
-  });
+        // Adiciona a classe 'active' à aba clicada e exibe o conteúdo correspondente
+        button.classList.add('active');
+        document.getElementById(button.getAttribute('data-state')).style.display = 'block';
+    });
 });
 
