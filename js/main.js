@@ -1,62 +1,39 @@
-// Texto dinâmico
-document.addEventListener('DOMContentLoaded', (event) => {
-    const dynamicText = document.querySelector('.dynamic-text');
-    const words = ['Negócios imobiliários', 'Investimentos', 'Grandes desafios'];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+document.getElementById('open-menu-btn').addEventListener('click', function() {
+    document.querySelector('.nav__menu').classList.add('active');
+    document.getElementById('open-menu-btn').classList.add('active');
+    document.getElementById('close-menu-btn').classList.add('active');
+  });
+  
+  document.getElementById('close-menu-btn').addEventListener('click', function() {
+    document.querySelector('.nav__menu').classList.remove('active');
+    document.getElementById('open-menu-btn').classList.remove('active');
+    document.getElementById('close-menu-btn').classList.remove('active');
+  });
 
-    function type() {
-        const currentWord = words[wordIndex];
-        if (isDeleting) {
-            dynamicText.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-            if (charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(type, 500);
-            } else {
-                setTimeout(type, 100);
-            }
-        } else {
-            dynamicText.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
-            if (charIndex === currentWord.length) {
-                isDeleting = true;
-                setTimeout(type, 2000);
-            } else {
-                setTimeout(type, 200);
-            }
+// Detectar rolagem e aplicar a classe para o fundo da navbar
+window.addEventListener('scroll', function() {
+   const navbar = document.querySelector('nav');
+   if (window.scrollY > 50) { // Ativar após 50px de rolagem
+     navbar.classList.add('nav-scrolled');
+   } else {
+     navbar.classList.remove('nav-scrolled');
+   }
+ });
+ 
+
+ function toggleCities(id) {
+    // Oculta todas as listas de cidades, exceto a que foi clicada
+    const cityLists = document.querySelectorAll('.city-list');
+    cityLists.forEach(list => {
+        if (list.id !== id) {
+            list.classList.remove('open'); // Fecha todas as outras listas
         }
-    }
-
-    // Inicia a função de digitação
-    type();
-});
-
-
- document.getElementById('open-menu-btn').addEventListener('click', function() {
-     document.querySelector('.nav__menu').classList.add('active');
-     document.getElementById('open-menu-btn').classList.add('active');
-     document.getElementById('close-menu-btn').classList.add('active');
-   });
-   
-   document.getElementById('close-menu-btn').addEventListener('click', function() {
-     document.querySelector('.nav__menu').classList.remove('active');
-     document.getElementById('open-menu-btn').classList.remove('active');
-     document.getElementById('close-menu-btn').classList.remove('active');
-   });
-   
-// JavaScript para alternar entre as abas e mostrar o conteúdo correto
-document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove a classe 'active' de todas as abas e oculta o conteúdo de todos os estados
-        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.state-content').forEach(content => content.style.display = 'none');
-
-        // Adiciona a classe 'active' à aba clicada e exibe o conteúdo correspondente
-        button.classList.add('active');
-        document.getElementById(button.getAttribute('data-state')).style.display = 'block';
     });
-});
+
+    // Alterna a classe 'open' na lista do estado selecionado
+    const cityList = document.getElementById(id);
+    cityList.classList.toggle('open');
+}
+
+
 

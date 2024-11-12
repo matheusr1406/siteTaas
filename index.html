@@ -1,202 +1,232 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
     <link rel="icon" href="images/favicon.svg" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moura Patrimonial</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-</head>
-<body>
+  </head>
+  <body>
     <!------------Header------------------->
     <div class="header-container">
-        <video autoplay muted loop id="headerVideo">
-            <source src="./images/1194945_Makati_Manila_1280x720.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-        <div class="overlay"></div>
-        <nav>
-            <div class="container nav__container">
-                <a href="index.html" class="nav-brand">
-                    <h4 class="nav-title">Moura Patrimonial</h4>
-                </a>
-                <ul class="nav__menu">
-                    <li><a href="#headerVideo">Home</a></li>
-                    <li><a href="#quem-somos">Quem somos</a></li>
-                    <li><a href="#o-que-fazemos">O que fazemos</a></li>
-                    <li><a href="#onde-atuamos">Onde estamos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-                <button id="open-menu-btn" class="menu-btn">
-                    <i class="uil uil-bars"></i>
-                </button>
-                <button id="close-menu-btn" class="menu-btn">
-                    <i class="uil uil-times"></i>
-                </button>
-            </div>
-        </nav>
-        <div class="typing-container">
-            <span class="static-text">Expertise em</span>
-            <span class="dynamic-text"></span>
+      <video autoplay muted loop id="headerVideo">
+        <source
+          src="./images/456574_Bangkok_Drone_1280x720.mp4.crdownload"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div class="overlay"></div>
+      <nav>
+        <div class="container nav__container">
+          <a href="index.html" class="nav-brand">
+            <h4 class="nav-title">Moura Patrimonial</h4>
+          </a>
+          <ul class="nav__menu">
+            <li><a href="#headerVideo">Home</a></li>
+            <li><a href="#quem-somos">Quem somos</a></li>
+            <li><a href="#o-que-fazemos">O que fazemos</a></li>
+            <li><a href="#onde-atuamos">Onde estamos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+          <button id="open-menu-btn" class="menu-btn">
+            <i class="uil uil-bars"></i>
+          </button>
+          <button id="close-menu-btn" class="menu-btn">
+            <i class="uil uil-times"></i>
+          </button>
         </div>
+      </nav>
+      <div class="typing-container">
+        <span class="static-text">Expertise em</span>
+        <span class="dynamic-text"></span>
+      </div>
     </div>
+
+    <section class="intro-icons">
+      <div class="icon-container">
+        <div class="icon-item">
+          <i class="uil uil-lightbulb-alt"></i>
+          <p>Inovação Constante para Melhorar Resultados</p>
+        </div>
+        <div class="icon-item">
+          <i class="uil uil-shield-check"></i>
+          <p>Confiabilidade e Segurança em Cada Projeto</p>
+        </div>
+        <div class="icon-item">
+          <i class="uil uil-cog"></i>
+          <p>Soluções Personalizadas para o Seu Negócio</p>
+        </div>
+        <div class="icon-item">
+          <i class="uil uil-globe"></i>
+          <p>Compromisso com a Sustentabilidade</p>
+        </div>
+      </div>
+    </section>
+
     <!------------Quem Somos------------------->
-    <section class="quem-somos" id="quem-somos">
-        <div class="container">
-            <!-- Bloco da Esquerda: Quem Somos em Card -->
-            <div class="block-left card-style">
-                <h2 class="section-title">Quem Somos</h2>
-                <p class="intro-text">
-                    A Moura Patrimonial é uma empresa dedicada à gestão e ao crescimento patrimonial, com foco em soluções financeiras personalizadas e estratégias que garantem segurança e resultados. Com anos de experiência no setor, oferecemos uma abordagem integrada para proteger e expandir o patrimônio de nossos clientes, alinhando investimentos com objetivos de longo prazo e prezando pela transparência e ética em todas as operações. Nossa equipe é composta por profissionais qualificados e comprometidos com a excelência, visando sempre proporcionar tranquilidade e confiança para nossos parceiros.
-                </p>
-            </div>
-    
-            <!-- Linha Divisória -->
-            <div class="divider"></div>
-    
-            <!-- Bloco da Direita: Nossos Valores com Itens em Cards -->
-            <div class="block-right">
-                <h3 class="values-title">Nossos Valores</h3>
-                <div class="values-grid">
-                    <div class="value-card card-style">
-                        <i class="icon uil uil-shield-check"></i>
-                        <h4>Confiabilidade</h4>
-                        <p>Segurança e confiança em cada etapa do processo.</p>
-                    </div>
-                    <div class="value-card card-style">
-                        <i class="icon uil uil-chart-line"></i>
-                        <h4>Resultados</h4>
-                        <p>Foco em resultados consistentes e de alta performance.</p>
-                    </div>
-                    <div class="value-card card-style">
-                        <i class="icon uil uil-users-alt"></i>
-                        <h4>Parcerias</h4>
-                        <p>Relações duradouras e colaboração com nossos clientes.</p>
-                    </div>
-                    <div class="value-card card-style">
-                        <i class="icon uil uil-balance-scale"></i>
-                        <h4>Ética</h4>
-                        <p>Compromisso com a ética e integridade em todas as operações.</p>
-                    </div>
-                </div>
-            </div>
+    <section class="quem-somos">
+      <div class="grid-container">
+        <!-- Bloco de texto "Áreas de Atuação" -->
+        <div class="grid-item text-block">
+          <h3 class="card-title">Áreas de Atuação</h3>
+          <div class="divider"></div>
+          <ul class="card-list">
+            <li>Gestão Patrimonial</li>
+            <li>Postos de Combustível</li>
+            <li>Agronegócio</li>
+            <li>Construção e gestão de projetos</li>
+            <li>Compra e venda de ativos</li>
+            <li>New Business Operations</li>
+            <li>Águas termais</li>
+            <li>Investimentos em start-ups</li>
+            <li>Loteamentos</li>
+          </ul>
         </div>
-    </section>
-    
-    
-    <!------------O que fazemos------------------->
-    <section class="o-que-fazemos">
-        <div class="grid-container">
-            <!-- Bloco de texto "Áreas de Atuação" -->
-            <div class="grid-item text-block">
-                <h3>Áreas de Atuação</h3>
-                <ul>
-                    <li>Gestão Patrimonial</li>
-                    <li>Postos de Combustível</li>
-                    <li>Agronegócio</li>
-                    <li>Construção e gestão de projetos</li>
-                    <li>Compra e venda de ativos</li>
-                    <li>New Business Operations</li>
-                    <li>Águas termais</li>
-                    <li>Investimentos em start-ups</li>
-                    <li>Loteamentos</li>
-                </ul>
-            </div>
-    
-            <!-- Bloco de foto 1 -->
-            <div class="grid-item photo-block">
-                <img src="./images/officeum.svg" alt="Foto ilustrativa 1">
-            </div>
-    
-            <!-- Bloco de foto 2 -->
-            <div class="grid-item photo-block">
-                <img src="./images/officedois.svg" alt="Foto ilustrativa 2">
-            </div>
-    
-            <!-- Bloco de texto "Sobre Nós" ou "O Que Fazemos" -->
-            <div class="grid-item text-block">
-                <h3>O Que Fazemos</h3>
-                <p>
-                    Nossa missão é maximizar o valor dos investimentos dos nossos clientes, oferecendo
-                    soluções estratégicas, inovação constante, e expertise no mercado. Atuamos com ética
-                    e transparência para transformar oportunidades em resultados sólidos.
-                </p>
-            </div>
+
+        <!-- Bloco de foto 1 -->
+        <div class="grid-item photo-block">
+          <img src="images/officeum.svg" alt="Foto ilustrativa 1" />
         </div>
+
+        <!-- Bloco de foto 2 -->
+        <div class="grid-item photo-block">
+          <img src="images/officedois.svg" alt="Foto ilustrativa 2" />
+        </div>
+
+        <!-- Bloco de texto "Sobre Nós" -->
+        <div class="grid-item text-block">
+          <h3 class="card-title">Sobre Nós</h3>
+          <div class="divider"></div>
+          <p class="">
+            Nossa missão é maximizar o valor dos investimentos dos nossos
+            clientes, oferecendo soluções estratégicas, inovação constante, e
+            expertise no mercado. Atuamos com ética e transparência para
+            transformar oportunidades em resultados sólidos.
+          </p>
+        </div>
+      </div>
     </section>
-    
+
     <!------------Onde Estamos------------------->
     <section class="onde-estamos">
-        <h2>Onde Estamos</h2>
-        <div class="tab-container">
-            <!-- Abas para cada estado -->
-            <button class="tab-button active" data-state="rs">Rio Grande do Sul</button>
-            <button class="tab-button" data-state="sc">Santa Catarina</button>
-            <button class="tab-button" data-state="sp">São Paulo</button>
+      <div class="section-title">
+        <h2>ONDE ESTAMOS</h2>
+      </div>
+      <div class="state-container">
+        <div class="state-card" onclick="toggleCities('rs')">
+          <h3>Rio Grande do Sul</h3>
+          <ul id="rs" class="city-list multi-column">
+            <li>Porto Alegre</li>
+            <li>Gramado</li>
+            <li>Canela</li>
+            <li>São Leopoldo</li>
+            <li>Taquara</li>
+            <li>Osório</li>
+            <li>Passo Fundo</li>
+            <li>Arroio do Sal</li>
+            <li>Torres</li>
+            <li>Triunfo</li>
+            <li>Farroupilha</li>
+            <li>Portão</li>
+            <li>Campo</li>
+            <li>Imbé</li>
+          </ul>
         </div>
-        <div class="tab-content">
-            <!-- Conteúdo das cidades para cada estado -->
-            <div class="state-content" id="rs" style="display: block;">
-                <div class="city-card">
-                    <h3>Rio Grande do Sul</h3>
-                    <ul class="city-list">
-                        <li>Porto Alegre</li>
-                        <li>Gramado</li>
-                        <li>Canela</li>
-                        <li>São Leopoldo</li>
-                        <li>Taquara</li>
-                        <li>Osório</li>
-                        <li>Passo Fundo</li>
-                        <li>Arroio do Sal</li>
-                        <li>Torres</li>
-                        <li>Triunfo</li>
-                        <li>Farroupilha</li>
-                        <li>Portão</li>
-                        <li>Campo</li>
-                        <li>Imbé</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="state-content" id="sc" style="display: none;">
-                <div class="city-card">
-                    <h3>Santa Catarina</h3>
-                    <ul class="city-list">
-                        <li>Governador Celso Ramos</li>
-                        <li>São Francisco do Sul</li>
-                        <li>Barra Velha</li>
-                        <li>Garopaba</li>
-                        <li>São João do Sul</li>
-                        <li>Florianópolis</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="state-content" id="sp" style="display: none;">
-                <div class="city-card">
-                    <h3>São Paulo</h3>
-                    <ul class="city-list">
-                        <li>São Paulo</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="state-card" onclick="toggleCities('sc')">
+          <h3>Santa Catarina</h3>
+          <ul id="sc" class="city-list multi-column">
+            <li>Governador Celso Ramos</li>
+            <li>São Francisco do Sul</li>
+            <li>Barra Velha</li>
+            <li>Garopaba</li>
+            <li>São João do Sul</li>
+            <li>Florianópolis</li>
+          </ul>
         </div>
+        <div class="state-card" onclick="toggleCities('sp')">
+          <h3>São Paulo</h3>
+          <ul id="sp" class="city-list">
+            <li>São Paulo</li>
+          </ul>
+        </div>
+      </div>
     </section>
-    
-    
+
+    <!-- Linha Divisória Horizontal -->
+    <div class="section-divider"></div>
+
+    <!-- Seção de Contato -->
+    <section class="contato">
+      <div class="contact-content">
+        <!-- Informações de Contato à Esquerda -->
+        <div class="contact-info">
+          <h3>Entre em Contato</h3>
+          <p>
+            <i class="uil uil-envelope"></i>
+            <strong>Email: </strong> moura@mourapatrimonial.com.br
+          </p>
+          <p>
+            <i class="uil uil-instagram"></i>
+            <strong>Instagram: </strong> @mourapatrimonial
+          </p>
+          <p>
+            <i class="uil uil-phone"></i> <strong>Telefone: </strong> (51)
+            1234-5678
+          </p>
+          <p>
+            <i class="uil uil-map-marker"></i> <strong>Endereço: </strong> Av.
+            Dr. Nilo Peçanha, 2825 - Sala 404
+          </p>
+        </div>
+
+        <!-- Linha Divisória Vertical -->
+        <div class="vertical-divider"></div>
+
+        <!-- Mapa à Direita -->
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d696.9323598144683!2d-51.1633793486971!3d-30.02836666288943!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197797577b8221%3A0x8bda05c6a5db608e!2sIguatemi%20Corporate!5e0!3m2!1spt-BR!2sbr!4v1731377566466!5m2!1spt-BR!2sbr"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
     <footer class="site-footer">
-        <p>© 2024 Moura Patrimonial LTDA. Todos os direitos reservados.</p>
+      <p>© 2024 Moura Patrimonial LTDA. Todos os direitos reservados.</p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

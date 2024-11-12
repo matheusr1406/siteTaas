@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.7;
   color: var(--color-white);
   background: #000;
@@ -63,7 +63,8 @@ a {
 
 /*--- navbar ------ */
 nav {
-  background: #232931;
+  background: transparent;
+  transition: background-color 0.3s ease;
   position: fixed;
   top: 0;
   left: 0;
@@ -77,7 +78,7 @@ nav {
 }
 
 .nav-scrolled {
-  background: black !important; /* Cor mais escura ao rolar */
+  background-color: black;
 }
 
 nav button {
@@ -128,7 +129,7 @@ nav button {
 }
 
 .nav__menu a:hover {
-  color: #b0c4de ;
+  color: #b0c4de;
   text-decoration: none;
 }
 
@@ -170,163 +171,42 @@ nav button {
   z-index: 1;
 }
 
-/* HEADER */
-
-.typing-container {
+.intro-icons {
+  background-color: black;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  height: 100vh; /* Garante que o container ocupe toda a altura da viewport */
-  font-size: 4.3rem;
-  color: white;
   text-align: center;
-  flex-direction: column; /* Garante que os textos estejam centralizados verticalmente */
-  z-index: 2; /* Garante que o texto fique acima do overlay */
 }
 
-.static-text {
-  color: white;
-  margin-bottom: 20px; /* Adiciona margem inferior para espaçamento entre os textos */
-}
-
-.dynamic-text {
-  color: #b0c4de;
-  border-right: 2px solid white;
-  white-space: nowrap;
-  overflow: hidden;
-  text-align: center; /* Centraliza o texto dentro do container */
-}
-
-/* Quem Somos */
-
-.quem-somos {
-  background-color: #232931; /* Fundo azul */
-  padding: 4rem 0;
+.icon-container {
   display: flex;
-  justify-content: center;
-}
-
-.container {
-  display: flex;
-  align-items: flex-start;
-  gap: 4rem;
+  justify-content: space-around;
+  width: 85%; /* Aumenta a largura da área para distribuir melhor */
   max-width: 1200px;
-  width: 100%;
+  gap: 3rem; /* Aumenta o espaçamento entre os itens */
 }
 
-/* Estilo do Bloco Esquerdo e Direito */
-.block-left, .block-right {
+.icon-item {
+  color: white;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Títulos "Quem Somos" e "Nossos Valores" */
-.section-title, .values-title {
-  font-size: 2.2rem;
-  color: #ffffff; /* Branco */
-  text-align: center;
+.icon-item i {
+  font-size: 3rem; /* Tamanho do ícone */
   margin-bottom: 1rem;
 }
 
-
-/* Texto de Introdução */
-.intro-text {
-  font-size: 1.1rem;
-  color: #ffffff;
-  line-height: 1.7;
-  text-align: justify;
-  padding: 1.5rem; /* Espaçamento interno */
-  border: 2px solid #b0c4de; /* Borda azul clara ao redor do texto */
-  border-radius: 8px; /* Bordas arredondadas */
-}
-
-/* Linha Divisória */
-.divider {
-  width: 2px;
-  background-color: #ffffff; /* Linha branca */
-  height: 100%;
-  margin: 0 2rem;
-}
-
-/* Grid dos Valores */
-.values-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  justify-items: center;
-  max-width: 500px; /* Ajuste para alinhar melhor com o texto */
-}
-
-/* Estilo dos Cards de Valores */
-.value-card {
-  background-color: #b0c4de; /* Fundo branco */
-  color: white; /* Texto azul para contraste */
-  border-radius: 12px;
-  padding: 1.5rem;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.value-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.icon {
-  font-size: 2rem;
-  color: #1C3A5B;
-  margin-bottom: 0.5rem;
-}
-
-.value-card h4 {
-  font-size: 1.2rem;
-  color: #1C3A5B;
-  margin-bottom: 0.5rem;
-}
-
-.value-card p {
+.icon-item p {
   font-size: 1rem;
-  color: #555;
+  max-width: 180px;
 }
 
-/* Rodapé */
-.site-footer {
-  text-align: center;
-  padding: 20px 10px;
-  background-color: #101010;
-  color: #fff;
-  font-size: 14px;
-}
-
-.site-footer p {
-  margin: 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-}
-.o-que-fazemos {
+.quem-somos {
   background-color: #fff;
   padding: 6rem 0;
   display: flex;
@@ -337,39 +217,76 @@ nav button {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Configura duas colunas */
-  gap: 0;
-  max-width: 1000px;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 800px;
   width: 100%;
-  margin-top: -120px;
+  margin-top: -70px;
 }
 
 .grid-item {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Alinha o conteúdo no topo */
+  justify-content: flex-start;
   align-items: center;
-  padding: 3rem;
-  background-color: #393e46;
+  padding: 2rem;
+  background-color: #333333; /* Fundo cinza chumbo */
   color: #ffffff;
-  font-size: 1.4rem;
-  min-height: 500px; /* Define altura mínima para os blocos */
+  font-size: 1.2rem;
+  min-height: 400px;
+  opacity: 0; /* Inicia invisível para animação */
+  transform: translateY(20px); /* Efeito de deslizamento inicial */
+  animation: fadeInUp 0.8s forwards; /* Animação de fade-in e deslizamento */
 }
 
-/* Bloco de texto com título */
-.text-block h3 {
-  font-size: 2.5rem;
-  color: #b0c4de;
-  margin-bottom: 1rem;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para o título do card */
+.card-title {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
-.text-block p {
-  font-size: 1.2rem;
-  color: #e0e0e0;
+/* Linha divisória abaixo do título */
+.divider {
+  width: 50%;
+  height: 2px;
+  background-color: #b0c4de;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+/* Lista com espaçamento ajustado */
+.card-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  width: 90%;
+}
+
+.card-list li {
+  font-size: 1rem;
   line-height: 1.6;
-  text-align: justify;
-  max-width: 90%; /* Limita a largura para melhorar a leitura */
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem; /* Espaço para a bolinha */
+  color: #d3d3d3;
+}
+
+.card-list li::before {
+  content: "•"; /* Adiciona a bolinha */
+  color: #b0c4de; /* Cor da bolinha */
+  position: absolute;
+  left: 0; /* Alinha a bolinha à esquerda do item */
+  font-size: 1.2rem; /* Ajuste de tamanho para a bolinha */
+  line-height: 1; /* Garante que a bolinha fique centralizada verticalmente */
 }
 
 /* Estilos para blocos de imagem */
@@ -382,102 +299,254 @@ nav button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
 }
 
-
-.onde-estamos {
-  background-color: #232931;
-  color: #ffffff;
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-.onde-estamos h2 {
-  font-size: 2rem;
-  color: #b0c4de;
-  margin-bottom: 1.5rem;
-}
-
-/* Estilos das abas (tabs) */
-.tab-container {
+.section-title {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  align-items: center;
+  background-color: #333333; /* Fundo cinza chumbo */
+  color: #ffffff; /* Texto branco */
+  padding: 1rem 2rem; /* Espaçamento ao redor do título */
+  margin: auto; /* Espaçamento para separar do conteúdo acima */
+  width: fit-content; /* Ajusta a largura ao conteúdo */
+  border-radius: 8px; /* Borda arredondada para um toque moderno */
+  margin-top: -100px;
 }
 
-.tab-button {
-  background-color: #232931;
-  color: #b0c4de;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  margin: 0 0.3rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 5px;
+.section-title h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px; /* Espaçamento entre letras para destacar */
 }
 
-.tab-button.active, .tab-button:hover {
-  background-color: #b0c4de;
-  color: #232931;
-}
-
-/* Card para o conteúdo de cada estado */
-.city-card {
-  background-color: #393e46;
-  color: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.city-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #b0c4de;
+.onde-estamos {
+  background-color: black;
+  padding: 4rem 0;
   text-align: center;
 }
 
-/* Estilo da lista de cidades */
+.state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 90px;
+}
+
+.state-card {
+  background-color: #333;
+  color: #fff;
+  padding: 1.5rem;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.state-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para a lista de cidades */
+/* Estilos para a lista de cidades */
 .city-list {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Organiza as cidades em colunas */
-  gap: 0.5rem; /* Espaço entre os itens */
-  font-size: 1.2rem;
-  color: #e0e0e0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  overflow: hidden; /* Necessário para o efeito de transição */
+  max-height: 0; /* Começa fechada */
+  opacity: 0; /* Inicia com opacidade 0 */
+  transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+/* Abre a lista de cidades com animação */
+.city-list.open {
+  max-height: 500px; /* Ajuste o valor conforme necessário */
+  opacity: 1; /* Mostra a lista com opacidade */
+}
+
+/* Multi-coluna para estados com muitas cidades */
+.multi-column {
+  column-count: 3; /* Divide em 3 colunas */
+  column-gap: 2rem; /* Espaçamento entre as colunas */
 }
 
 .city-list li {
-  padding: 0.3rem;
-  text-align: center;
-  background-color: #b0c4de;
-  color: #1C3A5B;
-  border-radius: 5px;
-  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  color: #d3d3d3;
 }
 
-/* Responsivo */
+/* Adiciona a bolinha antes de cada cidade */
+.city-list li::before {
+  content: "•";
+  color: #b0c4de;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Linha divisória horizontal */
+.section-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  margin: 2rem 0;
+}
+
+/* Título da seção Contato */
+.section-contato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333333; /* Fundo cinza chumbo */
+  color: #ffffff; /* Texto branco */
+  padding: 1rem 2rem; /* Espaçamento ao redor do título */
+  margin: auto; /* Espaçamento para separar do conteúdo acima */
+  width: fit-content; /* Ajusta a largura ao conteúdo */
+  border-radius: 8px; /* Borda arredondada para um toque moderno */
+  transform: translateY(-1.5rem); /* Ajusta a posição do título */
+  margin-top: 50px;
+}
+
+.section-contato h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px; /* Espaçamento entre letras para destacar */
+}
+
+/* Seção de Contato */
+.contato {
+  padding: 4rem 0;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: -30px;
+}
+
+/* Conteúdo da Seção de Contato */
+.contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+  gap: 2rem;
+  padding-top: 2rem;
+  position: relative;
+}
+
+/* Informações de Contato à Esquerda */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #d3d3d3;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  color: #b0c4de;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 1rem 0; /* Espaçamento maior entre as linhas */
+  color: #ffffff;
+}
+
+.contact-info p strong {
+  font-weight: bold;
+  color: #b0c4de; /* Destaque na cor do rótulo */
+  margin-right: 0.5rem; /* Espaço entre o rótulo e o valor */
+}
+
+.contact-info p i {
+  color: #b0c4de;
+  font-size: 1.2rem;
+  margin-right: 0.5rem; /* Espaço entre o ícone e o texto */
+}
+
+.contact-info p a {
+  color: #d3d3d3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info p a:hover {
+  color: #b0c4de; /* Muda de cor no hover para destacar */
+}
+
+/* Linha separadora entre cada item, opcional */
+.contact-info p + p {
+  border-top: 1px solid #444; /* Linha separadora entre itens */
+  padding-top: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+
+/* Linha Divisória Vertical */
+.vertical-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%; /* Centraliza verticalmente */
+  width: 2px;
+  background-color: #ffffff;
+  transform: translateX(-50%);
+}
+
+/* Mapa à Direita */
+.contact-map {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-map iframe {
+  width: 500px;
+  height: 300px;
+  border-radius: 8px;
+  border: none;
+  margin-left: 190px;
+}
+
 @media (max-width: 768px) {
-  
-  /* Estrutura geral */
-  .quem-somos .container,
-  .outra-secao .container {
-    flex-direction: column;
+  /* Ajuste da Navbar */
+  .nav__container {
+    padding: 0 1rem;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
 
-  /* Navbar responsiva */
-  .nav__container {
-    display: flex;
-    flex-direction: row; /* Garante que os itens fiquem em linha */
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
+  .nav-title {
+    font-size: 1.2rem;
+    margin-top: 0;
   }
 
   .nav__menu {
@@ -490,13 +559,13 @@ nav button {
     top: 5rem;
     left: 0;
     padding: 1rem 0;
-    z-index: 999; /* Abaixo do botão para que o botão fique visível */
+    z-index: 999;
   }
 
   .nav__menu a {
     margin: 1rem 0;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
   }
 
@@ -507,7 +576,7 @@ nav button {
     color: white;
     font-size: 2rem;
     cursor: pointer;
-    z-index: 1001; /* Garante que o botão esteja acima do menu */
+    z-index: 1001;
   }
 
   /* Alternância dos botões de menu */
@@ -531,105 +600,125 @@ nav button {
     display: block;
   }
 
-  /* Quem Somos */
-  .divider {
-    display: none;
-  }
-
-  .section-title, .values-title {
-    text-align: center;
-  }
-
-  .intro-text, .values-list {
-    text-align: center;
-  }
-
-  .values-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    max-width: 100%;
-  }
-
-  .grid-container {
-    grid-template-columns: 1fr; /* Em telas pequenas, exibe uma coluna */
-}
-  /* Header */
+  /* Header e Vídeo */
   .header-container {
-    height: 80vh;
+    height: 70vh;
   }
 
-  .typing-container {
-    font-size: 2.5rem;
-  }
-
-  /* Seção "Quem Somos" */
-  .quem-somos {
-    padding: 2rem 1rem;
-  }
-
-  .block-left, .block-right {
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .values-grid {
+  .header__container {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
   }
 
-  /* Seção "O Que Fazemos" */
-  .o-que-fazemos {
-    margin-top: 50px;
-    padding: 2rem 1rem;
+  /* Tamanho da Fonte e Padding */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 3rem 1rem;
+  }
+
+  /* Ícones da Seção de Introdução */
+  .intro-icons {
+    padding: 1.5rem 0;
+    flex-direction: column;
+  }
+
+  .icon-container {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .icon-item i {
+    font-size: 2rem;
+  }
+
+  .icon-item p {
+    font-size: 0.9rem;
+  }
+
+  /* Seção Quem Somos */
+  .quem-somos {
+    padding: 3rem 1rem;
   }
 
   .grid-container {
-    grid-template-columns: 1fr; /* Ajusta para uma coluna em telas pequenas */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 0;
   }
 
   .grid-item {
     min-height: 300px;
     padding: 1.5rem;
+    font-size: 1rem;
   }
 
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .divider {
+    width: 30%;
+  }
+
+  .card-list li {
+    font-size: 0.9rem;
+  }
+
+  /* Estilos da Imagem no Bloco */
   .photo-block img {
-    height: 200px; /* Altura ajustada para telas menores */
+    height: auto;
+    border-radius: 5px;
   }
 
-  /* Seção "Onde Estamos" */
-  .onde-estamos {
-    padding: 2rem 1rem;
+  /* Título da Próxima Seção */
+  .section-title {
+    padding: 0.5rem 1rem;
+    margin-top: -50px;
   }
 
-  .tab-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+  .section-title h2 {
+    font-size: 1.4rem;
   }
 
-  .tab-button {
+  /* Conteiner Principal */
+  .container {
     width: 100%;
-    margin-bottom: 0.5rem;
+    padding: 0 1rem;
   }
 
-  .city-card {
-    padding: 1.5rem;
-    max-width: 100%;
+  .contact-content {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .city-list {
-    grid-template-columns: 1fr; /* Exibe cidades em uma coluna em telas menores */
-    gap: 0.5rem;
+  .vertical-divider {
+    display: none;
   }
 
-  /* Footer */
-  .site-footer {
-    font-size: 12px;
-    padding: 15px 10px;
+  .contact-info p strong {
+    display: inline;
   }
 
-  /* Footer */
-  .site-footer {
-    padding: 20px 10px;
+  .contact-map iframe {
+    height: 250px;
+  }
+
+  /* Ajustes em Geral */
+  body {
+    line-height: 1.5;
+  }
+
+  a {
+    font-size: 0.9rem;
   }
 }
